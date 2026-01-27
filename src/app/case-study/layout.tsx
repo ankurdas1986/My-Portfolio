@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { Navbar, Footer } from "@/components";
 
 export default function CaseStudyLayout({
   children,
@@ -8,7 +8,8 @@ export default function CaseStudyLayout({
   return (
     <>
       <Navbar />
-      <main className="pt-16">{children}</main>
+      <main className="pt-16 min-h-screen">{children}</main>
+      <Footer />
     </>
   );
 }

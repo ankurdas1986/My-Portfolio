@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -32,8 +31,21 @@ export default function DivineHomesteadCaseStudy() {
     animate: { opacity: 1, y: 0 },
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Divine Homestead Design - Custom Home Planning UI/UX",
+    "author": { "@type": "Person", "name": "Ankur Das" },
+    "description": "Transforming custom home planning through modern design and AI-assisted development workflow.",
+    "keywords": "Architecture Website, Next.js, AI Development, UI Design"
+  };
+
   return (
     <div className="min-h-screen bg-white font-['Figtree']">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Back Button */}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8"

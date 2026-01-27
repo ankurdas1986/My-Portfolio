@@ -28,6 +28,9 @@ export const metadata: Metadata = {
       "Team Leader with 10+ years of experience in UI/UX design and frontend development.",
     type: "website",
   },
+  icons: {
+    icon: "/images/logo.svg",
+  },
 };
 
 export default function RootLayout({

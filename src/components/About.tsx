@@ -66,13 +66,30 @@ export function About() {
   return (
     <motion.section
       id="about"
-      className="py-20 bg-white dark:bg-gray-900"
+      className="relative py-20 bg-white dark:bg-gray-900 overflow-hidden z-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Animated Purple Gradient Background */}
+      <motion.div
+        className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none"
+        animate={{
+          backgroundPosition: ["0% 0%", "100% 100%"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        style={{
+          background:
+            "radial-gradient(circle at center, rgba(168, 85, 247, 0.4) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(45deg, rgba(233, 213, 255, 0.5), rgba(243, 232, 255, 0.5), rgba(224, 231, 255, 0.5))",
+          backgroundSize: "200% 200%",
+        }}
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
           <motion.h2
@@ -84,7 +101,7 @@ export function About() {
             About Me
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -106,7 +123,7 @@ export function About() {
             >
               My Journey in Design & Development
             </motion.h3>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -123,7 +140,7 @@ export function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Since <strong>2012</strong>, I've been immersed in the industry,
+                Since <strong>2012</strong>, I&apos;ve been immersed in the industry,
                 growing from a web designer to a senior developer, and now
                 serving as a <strong>Team Leader</strong> at Aquarious
                 Technology. My experience spans traditional development, modern
@@ -186,14 +203,14 @@ export function About() {
 
         {/* Career Timeline Summary */}
         <motion.div
-          className="bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 rounded-lg p-8"
+          className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-8 shadow-lg"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ scale: 1.02 }}
         >
           <motion.h3
-            className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center"
+            className="text-xl font-bold text-white mb-6 text-center"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -209,49 +226,48 @@ export function About() {
           >
             <motion.div variants={itemVariants}>
               <motion.div
-                className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2"
-                whileHover={{ scale: 1.1, color: "#00A2FF" }}
+                className="text-2xl font-bold text-white mb-2"
+                whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
               >
                 2007-2012
               </motion.div>
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">
+              <div className="font-semibold text-white mb-1">
                 Educational Foundation
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
+              <div className="text-sm text-white/90">
                 Teaching & Training in Web Design
               </div>
             </motion.div>
             <motion.div variants={itemVariants}>
               <motion.div
-                className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2"
-                whileHover={{ scale: 1.1, color: "#00A2FF" }}
+                className="text-2xl font-bold text-white mb-2"
+                whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
               >
                 2012-2022
               </motion.div>
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">
+              <div className="font-semibold text-white mb-1">
                 Industry Growth
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
+              <div className="text-sm text-white/90">
                 Senior Developer & Designer
               </div>
             </motion.div>
             <motion.div variants={itemVariants}>
               <motion.div
-                className="text-2xl font-bold text-accent mb-2"
+                className="text-2xl font-bold text-white mb-2"
                 animate={{
                   scale: [1, 1.1, 1],
-                  color: ["#00A2FF", "#0088cc", "#00A2FF"],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 2022-Present
               </motion.div>
-              <div className="font-semibold text-gray-900 dark:text-white mb-1">
+              <div className="font-semibold text-white mb-1">
                 Leadership Role
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
+              <div className="text-sm text-white/90">
                 Team Leader & Technical Lead
               </div>
             </motion.div>

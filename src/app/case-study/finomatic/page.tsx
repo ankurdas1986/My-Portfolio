@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -32,8 +31,21 @@ export default function FinomaticCaseStudy() {
     animate: { opacity: 1, y: 0 },
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Finomatic - Interactive Board Game UI",
+    "author": { "@type": "Person", "name": "Ankur Das" },
+    "description": "Innovative board game UI development with seamless web integration and interactive gaming experience.",
+    "keywords": "Game UI, Board Game, Web Development, Interactive Design"
+  };
+
   return (
     <div className="min-h-screen bg-white font-['Figtree']">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Back Button */}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8"

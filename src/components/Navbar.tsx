@@ -8,15 +8,29 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+
+      // Show navbar if scrolling up or at the top
+      if (currentScrollY < 10 || currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else if (currentScrollY > 10 && currentScrollY > lastScrollY) {
+        // Hide navbar if scrolling down and not at the top
+        setIsVisible(false);
+      }
+
+      setIsScrolled(currentScrollY > 20);
+      setLastScrollY(currentScrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -29,11 +43,11 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 w-full z-50 transition-all duration-300 transform ${isVisible ? "translate-y-0" : "-translate-y-full"
+        } ${isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white/80 backdrop-blur-sm"
-      }`}
+          : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -44,7 +58,8 @@ export function Navbar() {
               alt="Ankur Das Logo"
               width={130}
               height={40}
-              className="mr-2 pt-5"
+              className={`mr-2 transition-all duration-300 ${isScrolled ? "w-24 pt-2" : "w-32 pt-5"
+                }`}
             />
           </Link>
 

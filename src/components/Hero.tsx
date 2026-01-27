@@ -5,12 +5,6 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Hero() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  };
-
   const fadeInLeft = {
     initial: { opacity: 0, x: -60 },
     animate: { opacity: 1, x: 0 },
@@ -38,12 +32,41 @@ export function Hero() {
   return (
     <motion.section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-white"
+      className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden -mb-5"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="absolute inset-0 z-0">
+        <motion.div
+          className="absolute -top-[20%] -left-[10%] w-[40rem] h-[40rem] bg-purple-400/30 rounded-full blur-[100px]"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-[40%] -right-[10%] w-[35rem] h-[35rem] bg-blue-400/20 rounded-full blur-[100px]"
+          animate={{
+            scale: [1, 1.3, 1],
+            x: [0, -40, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -bottom-[20%] left-[20%] w-[45rem] h-[45rem] bg-pink-400/20 rounded-full blur-[100px]"
+          animate={{
+            scale: [1, 1.1, 1],
+            x: [0, 30, 0],
+            y: [0, 20, 0],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div className="text-center lg:text-left" {...fadeInLeft}>
@@ -53,7 +76,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="text-black bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent animate-pulse">
                 Ankur Das
               </span>
@@ -64,18 +87,22 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Team Leader & UI/UX Designer
+              UI/UX Design Lead & AI-Powered Frontend Developer
             </motion.h2>
             <motion.p
-              className="text-lg text-gray-600 mb-8 max-w-2xl"
+              className="text-xl sm:text-2xl text-gray-900 mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Crafting seamless, user-focused digital experiences with{" "}
-              <span className="font-semibold text-black">10+ years</span> of
-              industry expertise. Leading teams and delivering exceptional web
-              and mobile applications.
+              <span className="font-bold text-black text-3xl">15+ years</span> of
+              industry expertise. Leading teams and building exceptional web
+              applications with{" "}
+              <span className="font-semibold text-purple-600">
+                AI-powered development
+              </span>{" "}
+              workflows.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -87,23 +114,33 @@ export function Hero() {
             >
               <motion.a
                 href="#projects"
-                className="group bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-lg relative overflow-hidden"
+                className="group bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden"
                 variants={staggerItem}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10">View My Work</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <motion.div
+                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+                  initial={{ x: "-150%" }}
+                  whileHover={{ x: "150%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                />
               </motion.a>
               <motion.a
                 href="#contact"
-                className="group border-2 border-gray-800 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 hover:shadow-lg relative overflow-hidden"
+                className="group border-2 border-gray-800 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden"
                 variants={staggerItem}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <motion.div
+                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+                  initial={{ x: "-150%" }}
+                  whileHover={{ x: "150%" }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                />
               </motion.a>
             </motion.div>
 
@@ -138,7 +175,7 @@ export function Hero() {
               </motion.a>
               <motion.a
                 href="mailto:ankurdas1986@gmail.com"
-                className="group px-3 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-gray-600 hover:text-gray-800 transform hover:scale-110 hover:-translate-y-1"
+                className="group p-3 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 text-gray-600 hover:text-gray-800 transform hover:scale-110 hover:-translate-y-1"
                 variants={staggerItem}
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.3 }}
@@ -158,13 +195,13 @@ export function Hero() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="w-full">
+              <div className="w-full leading-none">
                 <Image
                   src="/images/Ankur-Das.png"
                   alt="Ankur Das - UI/UX Designer & Team Leader"
                   width={400}
                   height={500}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover block transition-transform duration-300 hover:scale-105"
                   priority
                   unoptimized
                 />

@@ -1,6 +1,7 @@
 "use client";
 
-import { Code, Palette, Users, Zap } from "lucide-react";
+import { Code, Palette, Users, Zap, Bot, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Skills() {
   const skillCategories = [
@@ -27,14 +28,25 @@ export function Skills() {
       ],
     },
     {
+      icon: <Bot size={32} />,
+      title: "AI-Powered Development",
+      skills: [
+        { name: "v0 by Vercel", level: 90 },
+        { name: "AI Prompt Engineering", level: 85 },
+        { name: "Cursor AI", level: 80 },
+        { name: "GitHub Copilot", level: 85 },
+        { name: "AI Workflow Design", level: 85 },
+      ],
+    },
+    {
       icon: <Zap size={32} />,
       title: "Modern Technologies",
       skills: [
         { name: "Tailwind CSS", level: 90 },
-        { name: "Bootstrap", level: 95 },
+        { name: "Framer Motion", level: 85 },
+        { name: "TypeScript", level: 80 },
         { name: "Responsive Design", level: 95 },
-        { name: "VO AI Development", level: 80 },
-        { name: "Vibe Coding", level: 75 },
+        { name: "Performance Optimization", level: 85 },
       ],
     },
     {
@@ -48,98 +60,251 @@ export function Skills() {
         { name: "Mentoring", level: 90 },
       ],
     },
+    {
+      icon: <Globe size={32} />,
+      title: "Workflow & Ecosystem",
+      skills: [
+        { name: "Git & Version Control", level: 95 },
+        { name: "CI/CD Pipelines", level: 80 },
+        { name: "SEO Optimization", level: 90 },
+        { name: "Web Accessibility (A11y)", level: 95 },
+        { name: "Cross-Browser Testing", level: 95 },
+      ],
+    },
   ];
 
   const tools = [
-    "Microsoft Visual Studio Code",
+    "VS Code",
     "Jira",
     "Git",
-    "Vercel AI",
-    "Cascading Style Sheets (CSS)",
-    "Email Template Design",
-    "Mobile Application Design",
-    "User Experience (UX)",
-    "Banner Designing",
-    "Corporate Identity Design",
+    "Vercel",
+    "GitHub",
+    "Notion",
+    "Slack",
+    "Linear",
+    "Zeplin",
+    "Storybook",
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  const skillBarVariants = {
+    hidden: { width: 0 },
+    visible: (level: number) => ({
+      width: `${level}%`,
+      transition: {
+        duration: 1,
+        delay: 0.3,
+      },
+    }),
+  };
+
+  const toolVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <motion.section
+      id="skills"
+      className="py-20 bg-gray-200"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            whileHover={{ scale: 1.02 }}
+          >
             Skills & Expertise
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A comprehensive toolkit built over 10+ years of experience, covering
-            design, development, and team leadership.
-          </p>
-        </div>
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-700 max-w-3xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            A comprehensive toolkit built over{" "}
+            <span className="font-semibold text-accent">10+ years</span> of
+            experience, now enhanced with{" "}
+            <span className="font-semibold text-purple-600">
+              AI-powered development
+            </span>{" "}
+            capabilities.
+          </motion.p>
+        </motion.div>
 
         {/* Skills Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+              variants={cardVariants}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.2 },
+              }}
             >
               <div className="flex items-center mb-6">
-                <div className="text-accent mr-4">{category.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900">
+                <motion.div
+                  className="text-accent mr-4 p-2 bg-accent/10 rounded-lg"
+                  whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {category.icon}
+                </motion.div>
+                <h3 className="text-lg font-bold text-black">
                   {category.title}
                 </h3>
               </div>
 
               <div className="space-y-4">
                 {category.skills.map((skill, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-800 font-medium">
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-black text-sm font-bold">
                         {skill.name}
                       </span>
-                      <span className="text-gray-600 text-sm">
+                      <motion.span
+                        className="text-gray-500 text-xs"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.5 + idx * 0.1 }}
+                      >
                         {skill.level}%
-                      </span>
+                      </motion.span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-accent rounded-full h-2 transition-all duration-500"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <motion.div
+                        className="bg-gradient-to-r from-accent to-blue-500 rounded-full h-2"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={skill.level}
+                        variants={skillBarVariants}
+                      />
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Additional Tools & Technologies */}
-        <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg p-8">
+        <motion.div
+          className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
-            Additional Tools & Technologies
+            Tools & Workflow
           </h3>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <motion.div
+            className="flex flex-wrap gap-3 justify-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {tools.map((tool, index) => (
-              <span
+              <motion.span
                 key={index}
-                className="bg-white text-gray-800 px-4 py-2 rounded-lg text-sm font-medium shadow-sm"
+                className="bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-medium shadow-sm border border-gray-100 hover:border-accent hover:text-accent cursor-pointer transition-colors duration-200"
+                variants={toolVariants}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {tool}
-              </span>
+              </motion.span>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Experience Highlight */}
-        <div className="text-center mt-12">
-          <div className="inline-block bg-accent text-white px-8 py-4 rounded-lg">
-            <div className="text-2xl font-bold mb-1">10+</div>
-            <div className="text-sm">Years of Industry Experience</div>
-          </div>
-        </div>
+        {/* Experience Stats */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          {[
+            { value: "15+", label: "Years Experience" },
+            { value: "50+", label: "Projects Delivered" },
+            { value: "20+", label: "AI-Built Projects" },
+            { value: "10+", label: "Team Members Led" },
+            { value: "25+", label: "Global Clients" },
+            { value: "100%", label: "Client Satisfaction" },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100"
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div
+                className="text-3xl font-bold text-accent mb-1"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ type: "spring", delay: index * 0.1 }}
+              >
+                {stat.value}
+              </motion.div>
+              <div className="text-sm text-black font-medium">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
