@@ -310,9 +310,9 @@ export function Experience() {
             ))}
           </div>
           <p className="text-center text-gray-600 mt-8 text-sm max-w-2xl mx-auto italic">
-            "My educational background provided a strong foundation in teaching
+            &quot;My educational background provided a strong foundation in teaching
             and mentoring, skills that continue to benefit my current leadership
-            role."
+            role.&quot;
           </p>
         </div>
       </div>

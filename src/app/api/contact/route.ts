@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend('re_dPuWpjc2_5J1aBvfz2r9juw44j735UFm3');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
-    try {
-        const { name, email, subject, message } = await request.json();
+  try {
+    const { name, email, subject, message } = await request.json();
 
-        const data = await resend.emails.send({
-            from: 'Portfolio Contact <onboarding@resend.dev>',
-            to: ['ankurdas1986@gmail.com'],
-            subject: `Portfolio Inquiry: ${subject}`,
-            html: `
+    const data = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: ['ankurdas1986@gmail.com'],
+      subject: `Portfolio Inquiry: ${subject}`,
+      html: `
         <!DOCTYPE html>
         <html>
         <head>
@@ -74,11 +74,11 @@ export async function POST(request: Request) {
         </body>
         </html>
       `
-        });
+    });
 
-        return NextResponse.json({ success: true, data });
-    } catch (error) {
-        console.error('Email sending failed:', error);
-        return NextResponse.json({ success: false, error }, { status: 500 });
-    }
+    return NextResponse.json({ success: true, data });
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    return NextResponse.json({ success: false, error }, { status: 500 });
+  }
 }
