@@ -1,0 +1,139 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Professional background with modern lighting -->
+    <radialGradient id="background" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Face gradient for realistic skin tone -->
+    <radialGradient id="face" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Suit gradient -->
+    <linearGradient id="suit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Hair gradient -->
+    <radialGradient id="hair" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Professional studio background -->
+  <rect width="320" height="320" fill="url(#background)"/>
+  
+  <!-- Background lighting effects (professional studio setup) -->
+  <ellipse cx="100" cy="80" rx="40" ry="60" fill="#ffffff" opacity="0.1"/>
+  <ellipse cx="220" cy="100" rx="35" ry="55" fill="#ffffff" opacity="0.08"/>
+  <ellipse cx="280" cy="180" rx="30" ry="40" fill="#3b82f6" opacity="0.05"/>
+  
+  <!-- Professional backdrop blur -->
+  <circle cx="50" cy="120" r="25" fill="#60a5fa" opacity="0.06"/>
+  <circle cx="270" cy="150" r="30" fill="#3b82f6" opacity="0.06"/>
+  
+  <!-- Main body/shoulders -->
+  <path d="M70 200 Q70 180 90 180 L230 180 Q250 180 250 200 L260 320 L60 320 Z" fill="url(#suit)"/>
+  
+  <!-- Suit jacket lapels and details -->
+  <path d="M90 200 L115 220 L100 260" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M230 200 L205 220 L220 260" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- White dress shirt -->
+  <path d="M120 200 Q120 185 135 185 L185 185 Q200 185 200 200 L200 320 L120 320 Z" fill="#ffffff"/>
+  
+  <!-- Professional tie (blue accent) -->
+  <path d="M155 200 L165 200 Q162 240 162 280 Q160 285 158 280 Q158 240 155 200" fill="#2563eb"/>
+  <path d="M155 200 L165 200 L162 210 L158 210 Z" fill="#1d4ed8"/>
+  
+  <!-- Tie pattern -->
+  <line x1="158" y1="215" x2="162" y2="215" stroke="#1e40af" stroke-width="0.5"/>
+  <line x1="158" y1="225" x2="162" y2="225" stroke="#1e40af" stroke-width="0.5"/>
+  <line x1="158" y1="235" x2="162" y2="235" stroke="#1e40af" stroke-width="0.5"/>
+  
+  <!-- Neck -->
+  <ellipse cx="160" cy="180" rx="15" ry="20" fill="url(#face)"/>
+  
+  <!-- Head/Face -->
+  <circle cx="160" cy="130" r="45" fill="url(#face)"/>
+  
+  <!-- Face shading for dimension -->
+  <ellipse cx="135" cy="135" rx="10" ry="20" fill="#f59e0b" opacity="0.4"/>
+  <ellipse cx="185" cy="135" rx="10" ry="20" fill="#f59e0b" opacity="0.4"/>
+  
+  <!-- Hair (professional styled) -->
+  <path d="M115 130 Q115 95 160 85 Q205 95 205 130 Q200 100 160 100 Q120 100 115 130" fill="url(#hair)"/>
+  
+  <!-- Hair texture and styling -->
+  <path d="M130 100 Q140 95 150 100" fill="none" stroke="#4b5563" stroke-width="1" opacity="0.7"/>
+  <path d="M170 100 Q180 95 190 100" fill="none" stroke="#4b5563" stroke-width="1" opacity="0.7"/>
+  <path d="M145 98 Q155 93 165 98" fill="none" stroke="#4b5563" stroke-width="0.8" opacity="0.5"/>
+  
+  <!-- Professional glasses (modern style) -->
+  <circle cx="145" cy="125" r="16" fill="none" stroke="#374151" stroke-width="2.5"/>
+  <circle cx="175" cy="125" r="16" fill="none" stroke="#374151" stroke-width="2.5"/>
+  <line x1="161" y1="125" x2="159" y2="125" stroke="#374151" stroke-width="2.5"/>
+  
+  <!-- Glasses temple arms -->
+  <path d="M129 125 Q122 120 115 125" fill="none" stroke="#374151" stroke-width="2"/>
+  <path d="M191 125 Q198 120 205 125" fill="none" stroke="#374151" stroke-width="2"/>
+  
+  <!-- Glasses lenses (subtle reflections) -->
+  <circle cx="145" cy="125" r="14" fill="#f8fafc" opacity="0.3"/>
+  <circle cx="175" cy="125" r="14" fill="#f8fafc" opacity="0.3"/>
+  
+  <!-- Professional lens reflections -->
+  <ellipse cx="140" cy="120" rx="6" ry="10" fill="#ffffff" opacity="0.6"/>
+  <ellipse cx="170" cy="120" rx="6" ry="10" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Eyes (professional and confident) -->
+  <circle cx="145" cy="125" r="2.5" fill="#1f2937"/>
+  <circle cx="175" cy="125" r="2.5" fill="#1f2937"/>
+  <circle cx="146" cy="124" r="0.8" fill="#ffffff"/>
+  <circle cx="176" cy="124" r="0.8" fill="#ffffff"/>
+  
+  <!-- Eyebrows (well-groomed) -->
+  <path d="M135 115 Q145 110 155 115" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+  <path d="M165 115 Q175 110 185 115" fill="none" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M160 135 Q158 140 160 145" fill="none" stroke="#d97706" stroke-width="1.2" stroke-linecap="round"/>
+  <ellipse cx="160" cy="142" rx="2" ry="1" fill="#d97706" opacity="0.3"/>
+  
+  <!-- Professional smile -->
+  <path d="M150 150 Q160 158 170 150" fill="none" stroke="#1f2937" stroke-width="2.2" stroke-linecap="round"/>
+  
+  <!-- Subtle facial features -->
+  <path d="M152 148 Q160 152 168 148" fill="#d97706" opacity="0.2"/>
+  
+  <!-- Professional lighting on face -->
+  <ellipse cx="140" cy="110" rx="18" ry="25" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="180" cy="115" rx="12" ry="20" fill="#ffffff" opacity="0.2"/>
+  
+  <!-- Shirt collar details -->
+  <path d="M135 185 Q160 190 185 185" fill="none" stroke="#e5e7eb" stroke-width="1.5"/>
+  <path d="M140 190 L150 200" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+  <path d="M180 190 L170 200" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <!-- Professional shadow */
+  <ellipse cx="160" cy="310" rx="50" ry="6" fill="#1e293b" opacity="0.15"/>
+  
+  <!-- Additional professional studio lighting -->
+  <circle cx="60" cy="140" r="20" fill="#3b82f6" opacity="0.04"/>
+  <circle cx="260" cy="120" r="25" fill="#1d4ed8" opacity="0.04"/>
+  
+  <!-- Suit jacket buttons -->
+  <circle cx="160" cy="220" r="3" fill="#374151"/>
+  <circle cx="160" cy="240" r="3" fill="#374151"/>
+  
+  <!-- Professional studio backdrop gradient -->
+  <ellipse cx="160" cy="160" rx="140" ry="160" fill="#ffffff" opacity="0.1"/>
+</svg>
