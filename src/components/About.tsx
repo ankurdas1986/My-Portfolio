@@ -66,7 +66,7 @@ export function About() {
   return (
     <motion.section
       id="about"
-      className="relative py-20 bg-white dark:bg-gray-900 overflow-hidden z-20"
+      className="relative py-20 bg-gray-900 overflow-hidden z-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -74,7 +74,7 @@ export function About() {
     >
       {/* Animated Purple Gradient Background */}
       <motion.div
-        className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none"
+        className="absolute inset-0 opacity-20 pointer-events-none"
         animate={{
           backgroundPosition: ["0% 0%", "100% 100%"],
         }}
@@ -85,7 +85,7 @@ export function About() {
         }}
         style={{
           background:
-            "radial-gradient(circle at center, rgba(168, 85, 247, 0.4) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(45deg, rgba(233, 213, 255, 0.5), rgba(243, 232, 255, 0.5), rgba(224, 231, 255, 0.5))",
+            "radial-gradient(circle at center, rgba(168, 85, 247, 0.4) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(45deg, rgba(233, 213, 255, 0.1), rgba(243, 232, 255, 0.1), rgba(224, 231, 255, 0.1))",
           backgroundSize: "200% 200%",
         }}
       />
@@ -93,7 +93,7 @@ export function About() {
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -101,7 +101,7 @@ export function About() {
             About Me
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-lg text-gray-400 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -117,20 +117,20 @@ export function About() {
           {/* Text Content */}
           <motion.div variants={itemVariants}>
             <motion.h3
-              className="text-2xl font-bold text-gray-900 dark:text-white mb-6"
+              className="text-2xl font-bold text-white mb-6"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
               My Journey in Design & Development
             </motion.h3>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
+            <div className="space-y-4 text-gray-300">
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 I began my career in the{" "}
-                <strong>educational field (2007-2012)</strong>, teaching web
+                <strong className="text-white">educational field (2007-2012)</strong>, teaching web
                 design and multimedia to aspiring developers. This foundation in
                 education gave me a unique perspective on breaking down complex
                 concepts and mentoring others.
@@ -140,9 +140,9 @@ export function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Since <strong>2012</strong>, I&apos;ve been immersed in the industry,
+                Since <strong className="text-white">2012</strong>, I&apos;ve been immersed in the industry,
                 growing from a web designer to a senior developer, and now
-                serving as a <strong>Team Leader</strong> at Aquarious
+                serving as a <strong className="text-white">Team Leader</strong> at Aquarious
                 Technology. My experience spans traditional development, modern
                 frameworks, and even AI-assisted development.
               </motion.p>
@@ -151,7 +151,7 @@ export function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                I specialize in creating <strong>user-centered designs</strong>{" "}
+                I specialize in creating <strong className="text-white">user-centered designs</strong>{" "}
                 that not only look beautiful but solve real business problems.
                 My approach combines strategic thinking, technical expertise,
                 and team leadership to deliver exceptional digital experiences.
@@ -167,7 +167,7 @@ export function About() {
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
-                className="group bg-gray-100 dark:bg-gray-800 p-6 rounded-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer"
+                className="group bg-gray-800 p-6 rounded-lg hover:shadow-xl transition-all duration-300 border border-gray-700 cursor-pointer"
                 variants={cardVariants}
                 whileHover={{
                   scale: 1.05,
@@ -190,10 +190,10 @@ export function About() {
                 >
                   {item.icon}
                 </motion.div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                <h4 className="font-semibold text-white mb-2 group-hover:text-accent transition-colors duration-300">
                   {item.title}
                 </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-gray-400">
                   {item.description}
                 </p>
               </motion.div>

@@ -133,7 +133,7 @@ export function Skills() {
   return (
     <motion.section
       id="skills"
-      className="py-20 bg-gray-200"
+      className="py-20 bg-gray-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -147,13 +147,13 @@ export function Skills() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
             whileHover={{ scale: 1.02 }}
           >
             Skills & Expertise
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
+            className="text-lg text-gray-400 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -161,7 +161,7 @@ export function Skills() {
             A comprehensive toolkit built over{" "}
             <span className="font-semibold text-accent">10+ years</span> of
             experience, now enhanced with{" "}
-            <span className="font-semibold text-purple-600">
+            <span className="font-semibold text-purple-400">
               AI-powered development
             </span>{" "}
             capabilities.
@@ -179,7 +179,7 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-xl transition-shadow duration-300"
               variants={cardVariants}
               whileHover={{
                 y: -5,
@@ -194,7 +194,7 @@ export function Skills() {
                 >
                   {category.icon}
                 </motion.div>
-                <h3 className="text-lg font-bold text-black">
+                <h3 className="text-lg font-bold text-white">
                   {category.title}
                 </h3>
               </div>
@@ -209,11 +209,11 @@ export function Skills() {
                     viewport={{ once: true }}
                   >
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-black text-sm font-bold">
+                      <span className="text-white text-sm font-bold">
                         {skill.name}
                       </span>
                       <motion.span
-                        className="text-gray-500 text-xs"
+                        className="text-gray-400 text-xs"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: 0.5 + idx * 0.1 }}
@@ -221,7 +221,7 @@ export function Skills() {
                         {skill.level}%
                       </motion.span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
                       <motion.div
                         className="bg-gradient-to-r from-accent to-blue-500 rounded-full h-2"
                         initial="hidden"
@@ -240,13 +240,13 @@ export function Skills() {
 
         {/* Additional Tools & Technologies */}
         <motion.div
-          className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm"
+          className="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-sm"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
+          <h3 className="text-xl font-bold text-white mb-6 text-center">
             Tools & Workflow
           </h3>
           <motion.div
@@ -259,7 +259,7 @@ export function Skills() {
             {tools.map((tool, index) => (
               <motion.span
                 key={index}
-                className="bg-white text-gray-700 px-4 py-2 rounded-lg text-sm font-medium shadow-sm border border-gray-100 hover:border-accent hover:text-accent cursor-pointer transition-colors duration-200"
+                className="bg-gray-700 text-gray-200 px-4 py-2 rounded-lg text-sm font-medium shadow-sm border border-gray-600 hover:border-accent hover:text-accent cursor-pointer transition-colors duration-200"
                 variants={toolVariants}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -288,7 +288,7 @@ export function Skills() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100"
+              className="text-center p-4 bg-gray-800 rounded-xl shadow-sm border border-gray-700"
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
             >
@@ -300,7 +300,7 @@ export function Skills() {
               >
                 {stat.value}
               </motion.div>
-              <div className="text-sm text-black font-medium">{stat.label}</div>
+              <div className="text-sm text-white font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
