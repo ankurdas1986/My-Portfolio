@@ -1,537 +1,129 @@
 "use client";
 
-import Link from "next/link";
+import { CaseStudyTemplate, type CaseStudyData } from "@/components";
 import {
-  ArrowLeft,
-  ExternalLink,
-  Calendar,
-  User,
+  Home,
+  Ruler,
+  CalendarCheck,
+  Image,
+  MessageSquare,
   Palette,
-  Code,
 } from "lucide-react";
-import { motion } from "framer-motion";
+
+const caseStudyData: CaseStudyData = {
+  id: "divine-homestead",
+  title: "Divine Homestead Design",
+  subtitle:
+    "Creating an elegant digital presence for a custom home planning company that showcases architectural expertise and facilitates client consultations.",
+  category: "Architecture & Real Estate",
+  liveUrl: "https://www.divinehomesteaddesign.com/",
+  heroImage: "/images/premium-transfer-thumb.jpg",
+
+  role: "UI/UX Design Lead + AI Development",
+  roleType: "ai-development",
+  timeline: "2024",
+  teamSize: "Solo + AI Tools",
+
+  aboutProject: `Divine Homestead Design specializes in custom home planning and architectural design services. They help clients transform their dream homes from concept to detailed blueprints, working closely with families to create personalized living spaces. As Design Lead and AI Developer, I created a website that reflects the elegance and attention to detail that characterizes their architectural work while making it easy for prospective clients to understand their services and book consultations.`,
+
+  clientRequest: `We design beautiful homes for families, and our website should reflect that same level of craftsmanship. We need to showcase our portfolio in a way that helps potential clients envision their own projects. The site should be welcoming—we work with families making significant life decisions, so it needs to feel trustworthy and approachable. Most importantly, we need an easy way for clients to schedule consultations with us.`,
+
+  challenges: [
+    "Presenting architectural work in a way that appeals to a broad audience, from first-time homebuilders to renovation clients.",
+    "Creating a design that feels premium without being intimidating to clients with modest budgets.",
+    "Showcasing a portfolio while respecting that many projects contain personal/private family information.",
+    "Building trust for a service that involves significant financial and emotional investment from clients.",
+    "Designing an intuitive consultation booking flow for users unfamiliar with architectural processes.",
+  ],
+
+  approach: [
+    "Studied residential architecture websites to understand visual patterns that communicate quality and attention to detail.",
+    "Designed a clean, modern aesthetic with warm accents that feels welcoming and professional simultaneously.",
+    "Created a portfolio presentation system that highlights design principles and outcomes without overwhelming with technical details.",
+    "Used AI development tools to rapidly build an elegant, responsive site that matches the craftsmanship of architectural work.",
+    "Implemented a streamlined consultation booking system that captures project requirements upfront.",
+    "Designed clear service explanations that demystify the home planning process for first-time clients.",
+  ],
+
+  interestingFacts: [
+    "The warm color accents were chosen to evoke the feeling of home and family, differentiating from cold corporate architecture sites.",
+    "Portfolio images were carefully selected to show diverse project types, helping visitors find relevance to their situation.",
+    "The consultation form asks about lot details upfront, allowing the architects to prepare more effectively for initial meetings.",
+    "Mobile optimization was prioritized as many users browse home services on their phones during commutes.",
+  ],
+
+  summary: `Divine Homestead Design demonstrates my ability to create websites for service businesses where trust and portfolio presentation are equally important. As Design Lead and AI Developer, I delivered a platform that reflects the elegance of architectural design while making the complex process of custom home planning feel accessible. The project showcases expertise in service-oriented UX design and the strategic use of AI tools to deliver premium results efficiently.`,
+
+  tools: [
+    "Figma",
+    "v0 AI",
+    "Next.js",
+    "Responsive Design",
+    "CSS3",
+    "Modern Typography",
+  ],
+
+  coreFeatures: [
+    {
+      title: "Portfolio Showcase",
+      description:
+        "Elegant presentation of completed projects highlighting design principles and architectural details.",
+      icon: Image,
+    },
+    {
+      title: "Service Explanations",
+      description:
+        "Clear breakdowns of home planning services from initial consultation to final blueprints.",
+      icon: Ruler,
+    },
+    {
+      title: "Consultation Booking",
+      description:
+        "Streamlined scheduling system that captures project requirements for productive first meetings.",
+      icon: CalendarCheck,
+    },
+    {
+      title: "Design Philosophy",
+      description:
+        "Content sections that communicate the company's approach to personalized home design.",
+      icon: Palette,
+    },
+    {
+      title: "Client Testimonials",
+      description:
+        "Trust-building social proof from families who have built their dream homes with Divine.",
+      icon: MessageSquare,
+    },
+    {
+      title: "Welcoming Aesthetic",
+      description:
+        "Warm, inviting design that makes families feel comfortable beginning their home journey.",
+      icon: Home,
+    },
+  ],
+
+  results: [
+    {
+      value: "Clean",
+      metric: "Modern Design",
+      description: "Architecture-inspired aesthetics",
+    },
+    {
+      value: "Easy",
+      metric: "Booking Flow",
+      description: "Streamlined consultations",
+    },
+    {
+      value: "100%",
+      metric: "Responsive",
+      description: "Mobile-optimized experience",
+    },
+  ],
+
+  prevProject: { title: "Petrolube Trade", slug: "petrolube-trade" },
+  nextProject: { title: "Premium Transfers UK", slug: "premium-transfer" },
+};
 
 export default function DivineHomesteadCaseStudy() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const staggerItem = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-  };
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Divine Homestead Design - Custom Home Planning UI/UX",
-    "author": { "@type": "Person", "name": "Ankur Das" },
-    "description": "Transforming custom home planning through modern design and AI-assisted development workflow.",
-    "keywords": "Architecture Website, Next.js, AI Development, UI Design"
-  };
-
-  return (
-    <div className="min-h-screen bg-white font-['Figtree']">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      {/* Back Button */}
-      <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link
-          href="/#projects"
-          className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors group"
-        >
-          <ArrowLeft
-            size={20}
-            className="mr-2 group-hover:-translate-x-1 transition-transform"
-          />
-          Back to Projects
-        </Link>
-      </motion.div>
-
-      {/* Hero Section */}
-      <motion.section
-        className="py-16 bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <motion.div {...fadeInUp}>
-              <motion.h1
-                className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                Divine Homestead Design
-              </motion.h1>
-              <motion.p
-                className="text-xl text-gray-600 mb-8"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                Transforming custom home planning through modern design and
-                AI-assisted development workflow
-              </motion.p>
-
-              {/* Project Meta */}
-              <motion.div
-                className="grid grid-cols-2 gap-6 mb-8"
-                variants={staggerContainer}
-                initial="initial"
-                animate="animate"
-              >
-                <motion.div
-                  variants={staggerItem}
-                  className="flex items-center"
-                >
-                  <User size={20} className="text-gray-700 mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-600">Role</div>
-                    <div className="font-semibold text-gray-900">
-                      UI Designer + AI Development Lead
-                    </div>
-                  </div>
-                </motion.div>
-                <motion.div
-                  variants={staggerItem}
-                  className="flex items-center"
-                >
-                  <Calendar size={20} className="text-gray-700 mr-3" />
-                  <div>
-                    <div className="text-sm text-gray-600">Industry</div>
-                    <div className="font-semibold text-gray-900">
-                      Architecture/Real Estate
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                variants={staggerContainer}
-                initial="initial"
-                animate="animate"
-              >
-                <motion.a
-                  href="https://www.divinehomesteaddesign.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105"
-                  variants={staggerItem}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ExternalLink size={20} className="mr-2" />
-                  View Live Site
-                </motion.a>
-              </motion.div>
-            </motion.div>
-
-            {/* Hero Image Placeholder */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <div className="aspect-video bg-gray-100 rounded-lg shadow-2xl flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <Palette size={48} className="mx-auto mb-4" />
-                  <p>Hero Image Placeholder</p>
-                  <p className="text-sm">(Divine Homestead Design)</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Project Overview */}
-      <motion.section
-        className="py-16 bg-gray-50"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-gray-900 mb-8 text-center"
-            whileHover={{ scale: 1.02 }}
-          >
-            Project Overview
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.02, rotateY: 2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Challenge
-              </h3>
-              <p className="text-gray-600">
-                Divine Homestead Design needed a modern, professional website to
-                showcase their custom home planning services. The challenge was
-                to create a clean, architecture-focused design that would appeal
-                to potential clients while integrating modern development
-                practices using AI assistance.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.02, rotateY: -2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Solution</h3>
-              <p className="text-gray-600">
-                As UI Designer and AI Development Lead, I created a
-                comprehensive design system in Figma and led the implementation
-                using VO AI prompting techniques. This innovative approach
-                ensured pixel-perfect execution while maintaining design
-                consistency throughout the development process.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Design Process */}
-      <motion.section
-        className="py-16 bg-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-gray-900 mb-12 text-center"
-            whileHover={{ scale: 1.02 }}
-          >
-            Design & Development Process
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Palette size={24} className="text-gray-700" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                1. UI Design
-              </h3>
-              <p className="text-gray-600">
-                Created comprehensive wireframes and high-fidelity designs in
-                Figma, focusing on clean architecture aesthetics and
-                user-friendly navigation for home planning services.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Code size={24} className="text-gray-700" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                2. AI Development
-              </h3>
-              <p className="text-gray-600">
-                Led the development implementation using VO AI prompting
-                techniques, ensuring accurate translation of designs into
-                functional, responsive code with modern web standards.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <ExternalLink size={24} className="text-gray-700" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                3. Integration
-              </h3>
-              <p className="text-gray-600">
-                Integrated consultation booking system, image carousel
-                functionality, and responsive design optimizations to create a
-                complete digital solution for the business.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Key Features */}
-      <motion.section
-        className="py-16 bg-gray-50"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-gray-900 mb-12 text-center"
-            whileHover={{ scale: 1.02 }}
-          >
-            Key Features & Achievements
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Clean Modern Design",
-                description:
-                  "Architecture-focused aesthetic with professional layout and intuitive navigation",
-                image: "modern-design-placeholder",
-              },
-              {
-                title: "AI-Assisted Development",
-                description:
-                  "Innovative VO AI prompting workflow for efficient and accurate code implementation",
-                image: "ai-development-placeholder",
-              },
-              {
-                title: "Consultation Booking",
-                description:
-                  "Professional booking system for client consultations and service inquiries",
-                image: "booking-system-placeholder",
-              },
-              {
-                title: "Image Carousel",
-                description:
-                  "Dynamic showcase of home designs and architectural projects",
-                image: "carousel-placeholder",
-              },
-              {
-                title: "Service Benefits",
-                description:
-                  "Clear presentation of custom home planning services and value propositions",
-                image: "services-placeholder",
-              },
-              {
-                title: "Process Workflow",
-                description:
-                  "Step-by-step visualization of the home design and planning process",
-                image: "workflow-placeholder",
-              },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, rotateY: 5 }}
-              >
-                <div className="aspect-video bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-sm">Feature Image</div>
-                    <div className="text-xs">({feature.image})</div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Technologies Used */}
-      <motion.section
-        className="py-16 bg-white"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-gray-900 mb-8 text-center"
-            whileHover={{ scale: 1.02 }}
-          >
-            Technologies & Tools
-          </motion.h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {["Figma", "VO AI", "Next.js", "Responsive Design"].map(
-              (tech, index) => (
-                <motion.div
-                  key={tech}
-                  className="bg-gray-50 p-4 rounded-lg text-center hover:bg-accent hover:text-white transition-all duration-300"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, rotate: [0, -2, 2, 0] }}
-                >
-                  <div className="text-lg font-semibold">{tech}</div>
-                </motion.div>
-              )
-            )}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Results & Impact */}
-      <motion.section
-        className="py-16 bg-gray-50"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl font-bold text-gray-900 mb-8 text-center"
-            whileHover={{ scale: 1.02 }}
-          >
-            Results & Impact
-          </motion.h2>
-
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="text-3xl font-bold text-accent mb-2">100%</div>
-                <div className="text-gray-600">Design Accuracy</div>
-                <div className="text-sm text-gray-500">
-                  Pixel-perfect AI implementation
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="text-3xl font-bold text-accent mb-2">50%</div>
-                <div className="text-gray-600">Faster Development</div>
-                <div className="text-sm text-gray-500">
-                  Using AI-assisted workflow
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <div className="text-3xl font-bold text-accent mb-2">
-                  Modern
-                </div>
-                <div className="text-gray-600">Professional Presence</div>
-                <div className="text-sm text-gray-500">
-                  Enhanced business credibility
-                </div>
-              </motion.div>
-            </div>
-
-            <motion.div
-              className="mt-8 p-6 bg-gray-50 rounded-lg"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Project Outcomes
-              </h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>
-                  • Successfully delivered a modern, professional website that
-                  accurately represents the brand
-                </li>
-                <li>
-                  • Implemented innovative AI-assisted development workflow for
-                  efficient project execution
-                </li>
-                <li>
-                  • Created a scalable design system that can accommodate future
-                  business growth
-                </li>
-                <li>
-                  • Established clear user journey from consultation to service
-                  engagement
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Navigation */}
-      <motion.section
-        className="py-12 bg-white border-t"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <Link
-              href="/case-study/mumbai-cancer"
-              className="group text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <span className="text-sm">Next Project</span>
-              <div className="text-lg font-semibold group-hover:translate-x-1 transition-transform">
-                Mumbai Cancer →
-              </div>
-            </Link>
-
-            <motion.a
-              href="https://www.divinehomesteaddesign.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ExternalLink size={18} className="mr-2" />
-              View Live Site
-            </motion.a>
-          </div>
-        </div>
-      </motion.section>
-    </div>
-  );
+  return <CaseStudyTemplate data={caseStudyData} />;
 }

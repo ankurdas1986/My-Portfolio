@@ -8,6 +8,76 @@ import { motion } from "framer-motion";
 export function Projects() {
   const projects = [
     {
+      id: "nexg-petrolube",
+      title: "NexG Petrolube",
+      category: "Energy/Petroleum",
+      description:
+        "B2B petroleum trading platform with digital marketplace and used oil recovery services",
+      image: "/images/project-nexg.png",
+      technologies: ["Next.js", "v0 AI", "GSAP", "Modern CSS"],
+      role: "UI/UX Design Lead + AI Development",
+      link: "https://www.nexgpetrolube.com/",
+      caseStudyLink: "/case-study/nexg-petrolube",
+      aiDeveloped: true,
+      highlights: [
+        "Sustainability-focused design language",
+        "Multi-service business showcase",
+        "Client testimonials carousel",
+      ],
+    },
+    {
+      id: "used-oil-india",
+      title: "Used Oil India",
+      category: "Environmental Tech",
+      description:
+        "Used oil recycling marketplace connecting generators and collectors for sustainable waste management",
+      image: "/images/project-used-oil.png",
+      technologies: ["Next.js", "v0 AI", "React", "Mobile-First Design"],
+      role: "UI/UX Design Lead + AI Development",
+      link: "https://usedoilindia.com/",
+      caseStudyLink: "/case-study/used-oil-india",
+      aiDeveloped: true,
+      highlights: [
+        "Environmental sustainability focus",
+        "Mobile app integration showcase",
+        "Real-time statistics dashboard",
+      ],
+    },
+    {
+      id: "mumbai-cancer",
+      title: "Mumbai Cancer",
+      category: "Healthcare/Medical",
+      description:
+        "Comprehensive oncology information portal with specialist services and patient resources",
+      image: "/images/project-mumbai-cancer.png",
+      technologies: ["Figma", "React", "HTML/CSS", "Medical UI"],
+      role: "UI/UX Design Lead + Frontend Developer",
+      link: "https://mumbaicancer.in/",
+      caseStudyLink: "/case-study/mumbai-cancer",
+      highlights: [
+        "Healthcare-focused user interface",
+        "Medical information architecture",
+        "Accessible design for patients",
+      ],
+    },
+    {
+      id: "agremy",
+      title: "Agremy",
+      category: "Sustainable Agriculture",
+      description:
+        "Agroforestry marketplace connecting Kolli Hills farmers directly with global buyers for sustainable produce.",
+      image: "/images/project-agremy.png",
+      technologies: ["Next.js", "React", "E-commerce", "Sustainability"],
+      role: "UI/UX Design Lead + Frontend Developer",
+      link: "https://agremy.com/",
+      caseStudyLink: "/case-study/agremy",
+      highlights: [
+        "Farmer-to-consumer marketplace",
+        "Sustainable produce tracking",
+        "Community impact focus",
+      ],
+    },
+    {
       id: "aquarious-usa",
       title: "Aquarious Technology USA",
       category: "Technology/SaaS",
@@ -44,42 +114,6 @@ export function Projects() {
       ],
     },
     {
-      id: "nexg-petrolube",
-      title: "NexG Petrolube",
-      category: "Energy/Petroleum",
-      description:
-        "B2B petroleum trading platform with digital marketplace and used oil recovery services",
-      image: "/images/premium-transfer-thumb.jpg",
-      technologies: ["Next.js", "v0 AI", "GSAP", "Modern CSS"],
-      role: "UI/UX Design Lead + AI Development",
-      link: "https://www.nexgpetrolube.com/",
-      caseStudyLink: "/case-study/nexg-petrolube",
-      aiDeveloped: true,
-      highlights: [
-        "Sustainability-focused design language",
-        "Multi-service business showcase",
-        "Client testimonials carousel",
-      ],
-    },
-    {
-      id: "used-oil-india",
-      title: "Used Oil India",
-      category: "Environmental Tech",
-      description:
-        "Used oil recycling marketplace connecting generators and collectors for sustainable waste management",
-      image: "/images/premium-transfer-thumb.jpg",
-      technologies: ["Next.js", "v0 AI", "React", "Mobile-First Design"],
-      role: "UI/UX Design Lead + AI Development",
-      link: "https://usedoilindia.com/",
-      caseStudyLink: "/case-study/used-oil-india",
-      aiDeveloped: true,
-      highlights: [
-        "Environmental sustainability focus",
-        "Mobile app integration showcase",
-        "Real-time statistics dashboard",
-      ],
-    },
-    {
       id: "petrolube-trade",
       title: "Petrolube Trade",
       category: "B2B Marketplace",
@@ -113,23 +147,6 @@ export function Projects() {
         "Clean modern architecture-focused design",
         "AI-assisted development workflow",
         "Professional consultation booking system",
-      ],
-    },
-    {
-      id: "mumbai-cancer",
-      title: "Mumbai Cancer",
-      category: "Healthcare/Medical",
-      description:
-        "Comprehensive oncology information portal with specialist services and patient resources",
-      image: "/images/premium-transfer-thumb.jpg",
-      technologies: ["Figma", "React", "HTML/CSS", "Medical UI"],
-      role: "UI/UX Design Lead + Frontend Developer",
-      link: "https://mumbaicancer.in/",
-      caseStudyLink: "/case-study/mumbai-cancer",
-      highlights: [
-        "Healthcare-focused user interface",
-        "Medical information architecture",
-        "Accessible design for patients",
       ],
     },
     {

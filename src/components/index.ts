@@ -6,3 +6,4 @@ export { Skills } from './Skills';
 export { Experience } from './Experience';
 export { Contact } from './Contact';
 export { Footer } from './Footer';
+export { CaseStudyTemplate, type CaseStudyData } from './CaseStudyTemplate';
