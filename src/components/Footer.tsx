@@ -38,7 +38,7 @@ export function Footer() {
                         </motion.a>
                         <motion.a
                             href="mailto:ankurdas1986@gmail.com"
-                            className="p-2 bg-gray-900 rounded-full shadow-sm text-gray-400 hover:text-[#00A2FF] transition-colors border border-gray-800"
+                            className="p-2 bg-gray-900 rounded-full shadow-sm text-gray-400 hover:text-white transition-colors border border-gray-800"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >

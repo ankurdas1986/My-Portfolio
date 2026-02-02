@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable} antialiased font-sans`}>
+      <body className={`${dmSans.variable} ${inter.variable} antialiased font-sans`}>
         {children}
       </body>
     </html>

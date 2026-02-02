@@ -106,14 +106,14 @@ export function Contact() {
   return (
     <motion.section
       id="contact"
-      className="relative py-20 bg-gray-900 overflow-hidden"
+      className="relative py-20 bg-background overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.2 }}
     >
       <motion.div
-        className="absolute inset-0 opacity-20 pointer-events-none"
+        className="absolute inset-0 opacity-40 pointer-events-none"
         animate={{
           backgroundPosition: ["0% 0%", "100% 100%"],
         }}
@@ -124,8 +124,7 @@ export function Contact() {
         }}
         style={{
           background:
-            "radial-gradient(circle at center, rgba(168, 85, 247, 0.4) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(45deg, rgba(233, 213, 255, 0.1), rgba(243, 232, 255, 0.1), rgba(224, 231, 255, 0.1))",
-          backgroundSize: "200% 200%",
+            "radial-gradient(circle at center, rgba(30, 58, 95, 0.03) 0%, rgba(255, 255, 255, 0) 70%)",
         }}
       />
 
@@ -175,14 +174,14 @@ export function Contact() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl font-bold text-foreground mb-4"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             Let&apos;s Work Together
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-400 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -195,10 +194,10 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
               Get In Touch
             </h3>
-            <p className="text-gray-400 mb-8">
+            <p className="text-gray-600 mb-8">
               Whether you&apos;re looking for a UI/UX designer, a frontend developer,
               or a team leader for your next project, I&apos;m here to help. Let&apos;s
               discuss your requirements and create something exceptional.
@@ -208,20 +207,20 @@ export function Contact() {
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-center">
-                  <div className="text-blue-400 mr-4">{item.icon}</div>
+                  <div className="text-accent mr-4">{item.icon}</div>
                   <div>
-                    <div className="font-medium text-gray-200">
+                    <div className="font-medium text-foreground">
                       {item.label}
                     </div>
                     {item.href !== "#" ? (
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:text-blue-400 transition-colors"
+                        className="text-gray-600 hover:text-accent transition-colors"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <div className="text-gray-400">
+                      <div className="text-gray-600">
                         {item.value}
                       </div>
                     )}
@@ -232,7 +231,7 @@ export function Contact() {
 
             {/* Social Links */}
             <div>
-              <h4 className="font-semibold text-white mb-4">
+              <h4 className="font-semibold text-foreground mb-4">
                 Follow Me
               </h4>
               <div className="flex gap-4">
@@ -242,7 +241,7 @@ export function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 bg-gray-900 border border-gray-800 rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 ${social.color} hover:scale-110`}
+                    className={`p-3 bg-white border border-gray-200 rounded-lg hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 text-gray-600 hover:text-accent hover:scale-110`}
                     title={social.label}
                     whileHover={{
                       scale: 1.1,
@@ -259,11 +258,11 @@ export function Contact() {
             </div>
 
             {/* Availability */}
-            <div className="mt-8 p-4 bg-gray-900 border border-gray-800 rounded-lg">
-              <h4 className="font-semibold text-white mb-2">
+            <div className="mt-8 p-4 bg-white border border-gray-100 rounded-lg shadow-sm">
+              <h4 className="font-semibold text-foreground mb-2">
                 Current Availability
               </h4>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-600 text-sm">
                 I&apos;m currently available for new projects and collaborations.
                 Typical response time: within 24 hours.
               </p>
@@ -272,7 +271,7 @@ export function Contact() {
 
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
               Send a Message
             </h3>
 
@@ -281,7 +280,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-white mb-2"
+                    className="block text-sm font-medium text-foreground mb-2"
                   >
                     Your Name <span className="text-red-500">*</span>
                   </label>
@@ -293,14 +292,14 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-gray-900 text-white placeholder-gray-600 focus:bg-gray-800"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white text-foreground placeholder-gray-400 focus:bg-white"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-white mb-2"
+                    className="block text-sm font-medium text-foreground mb-2"
                   >
                     Email Address <span className="text-red-500">*</span>
                   </label>
@@ -312,7 +311,7 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-gray-900 text-white placeholder-gray-600 focus:bg-gray-800"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white text-foreground placeholder-gray-400 focus:bg-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -321,7 +320,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-white mb-2"
+                  className="block text-sm font-medium text-foreground mb-2"
                 >
                   Subject <span className="text-red-500">*</span>
                 </label>
@@ -333,7 +332,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-gray-900 text-white placeholder-gray-600 focus:bg-gray-800"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white text-foreground placeholder-gray-400 focus:bg-white"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -341,7 +340,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-white mb-2"
+                  className="block text-sm font-medium text-foreground mb-2"
                 >
                   Message
                 </label>
@@ -352,7 +351,7 @@ export function Contact() {
                   onChange={handleChange}
                   disabled={isSubmitting}
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-gray-900 text-white placeholder-gray-600 focus:bg-gray-800"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white text-foreground placeholder-gray-400 focus:bg-white"
                   placeholder="Tell me about your project... (Optional)"
                 />
               </div>
@@ -360,7 +359,7 @@ export function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="group w-full bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group w-full bg-accent text-white px-6 py-3 rounded-2xl font-semibold hover:bg-accent/90 transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
                 whileHover={isSubmitting ? {} : { scale: 1.02 }}
                 whileTap={isSubmitting ? {} : { scale: 0.98 }}
               >

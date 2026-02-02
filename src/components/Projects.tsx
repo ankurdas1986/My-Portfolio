@@ -227,7 +227,7 @@ export function Projects() {
   return (
     <motion.section
       id="projects"
-      className="py-20 bg-white"
+      className="py-20 bg-background-alt"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -242,14 +242,14 @@ export function Projects() {
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl font-medium text-foreground mb-4"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             Featured Projects
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
+            className="text-lg text-gray-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -268,7 +268,7 @@ export function Projects() {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
               variants={cardVariants}
               whileHover={{
                 scale: 1.02,
@@ -303,7 +303,7 @@ export function Projects() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <motion.span
-                      className="text-sm font-medium text-gray-700 bg-gray-100 px-2 py-1 rounded"
+                      className="text-sm font-medium text-gray-600 bg-gray-50 px-3 py-1.5 rounded-full"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}
                     >
@@ -327,7 +327,7 @@ export function Projects() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-accent transition-colors"
+                        className="text-gray-400 hover:text-accent transition-colors"
                         whileHover={{ scale: 1.2, rotate: 15 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -338,13 +338,13 @@ export function Projects() {
                 </div>
 
                 <motion.h3
-                  className="text-xl font-bold text-gray-900 mb-2"
-                  whileHover={{ color: "#00A2FF" }}
+                  className="text-xl font-medium text-foreground mb-2"
+                  whileHover={{ color: "#1E3A5F" }}
                   transition={{ duration: 0.2 }}
                 >
                   {project.title}
                 </motion.h3>
-                <p className="text-gray-700 mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
 
                 <div className="mb-4">
                   <div className="text-sm font-medium text-gray-900 mb-1">

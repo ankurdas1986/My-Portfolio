@@ -74,7 +74,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="group text-black hover:text-accent transition-colors duration-300 font-medium relative"
+                  className="group text-foreground hover:text-accent transition-colors duration-300 font-medium relative"
                 >
                   <span className="relative z-10">{item.label}</span>
                   <motion.div
@@ -93,7 +93,7 @@ export function Navbar() {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-black hover:text-accent transition-colors duration-200"
+              className="text-foreground hover:text-accent transition-colors duration-200"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -143,7 +143,7 @@ export function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="block py-2 text-black hover:text-accent transition-colors duration-200 font-medium"
+                    className="block py-2 text-foreground hover:text-accent transition-colors duration-200 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

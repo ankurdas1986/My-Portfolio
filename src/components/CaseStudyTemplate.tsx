@@ -171,7 +171,7 @@ export function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
                             </div>
 
                             <motion.h1
-                                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
+                                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -291,7 +291,7 @@ export function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
                         <span className="text-accent font-semibold text-sm uppercase tracking-wider">
                             Overview
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
                             About the Project
                         </h2>
                     </motion.div>
@@ -303,7 +303,7 @@ export function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-lg text-gray-700 leading-relaxed">
+                        <p className="text-lg text-gray-600 leading-relaxed">
                             {data.aboutProject}
                         </p>
                     </motion.div>
@@ -341,13 +341,13 @@ export function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <div className="absolute top-6 left-6 text-6xl text-accent/30 font-serif">
+                        <div className="absolute top-6 left-6 text-6xl text-white/20 font-serif">
                             &ldquo;
                         </div>
                         <p className="text-lg leading-relaxed relative z-10 pl-8">
                             {data.clientRequest}
                         </p>
-                        <div className="absolute bottom-6 right-6 text-6xl text-accent/30 font-serif">
+                        <div className="absolute bottom-6 right-6 text-6xl text-white/20 font-serif">
                             &rdquo;
                         </div>
                     </motion.div>
@@ -556,8 +556,8 @@ export function CaseStudyTemplate({ data }: { data: CaseStudyData }) {
                                 whileHover={{ scale: 1.02 }}
                             >
                                 <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                                        <Lightbulb size={20} className="text-accent" />
+                                    <div className="flex-shrink-0 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                                        <Lightbulb size={20} className="text-white" />
                                     </div>
                                     <p className="text-gray-300 leading-relaxed">{fact}</p>
                                 </div>

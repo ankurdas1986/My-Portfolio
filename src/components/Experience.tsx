@@ -139,7 +139,7 @@ export function Experience() {
   return (
     <motion.section
       id="experience"
-      className="relative py-20 bg-white overflow-hidden"
+      className="relative py-20 bg-background overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -172,7 +172,7 @@ export function Experience() {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl font-medium text-foreground mb-4"
             whileHover={{ scale: 1.02 }}
           >
             Professional Experience
@@ -185,7 +185,7 @@ export function Experience() {
 
         {/* Main Experience Timeline */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
             Industry Experience (2012 - Present)
           </h3>
 
@@ -206,7 +206,7 @@ export function Experience() {
                   <div className="lg:col-span-3 flex flex-col lg:pr-8">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                        <h4 className="text-xl font-medium text-foreground mb-1 group-hover:text-blue-600 transition-colors">
                           {exp.position}
                         </h4>
                         <div className="flex items-center text-blue-600 font-medium mb-2">

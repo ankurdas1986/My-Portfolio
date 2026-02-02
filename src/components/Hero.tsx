@@ -37,9 +37,9 @@ export function Hero() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-40">
         <motion.div
-          className="absolute -top-[20%] -left-[10%] w-[40rem] h-[40rem] bg-purple-400/30 rounded-full blur-[100px]"
+          className="absolute -top-[20%] -left-[10%] w-[40rem] h-[40rem] bg-secondary rounded-full blur-[100px]"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -48,7 +48,7 @@ export function Hero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-[40%] -right-[10%] w-[35rem] h-[35rem] bg-blue-400/20 rounded-full blur-[100px]"
+          className="absolute top-[40%] -right-[10%] w-[35rem] h-[35rem] bg-gray-200 rounded-full blur-[100px]"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -40, 0],
@@ -57,7 +57,7 @@ export function Hero() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-[20%] left-[20%] w-[45rem] h-[45rem] bg-pink-400/20 rounded-full blur-[100px]"
+          className="absolute -bottom-[20%] left-[20%] w-[45rem] h-[45rem] bg-secondary/80 rounded-full blur-[100px]"
           animate={{
             scale: [1, 1.1, 1],
             x: [0, 30, 0],
@@ -71,18 +71,24 @@ export function Hero() {
           {/* Text Content */}
           <motion.div className="text-center lg:text-left" {...fadeInLeft}>
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6"
+              className="text-4xl sm:text-5xl lg:text-7xl font-medium text-foreground mb-6 tracking-tight"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Hi, I&apos;m{" "}
-              <span className="text-black bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent animate-pulse">
+              <span className="text-foreground relative inline-block">
                 Ankur Das
+                <motion.div
+                  className="absolute bottom-2 left-0 w-full h-3 bg-accent/10 -z-10 transform -rotate-2"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                />
               </span>
             </motion.h1>
             <motion.h2
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 mb-6 font-medium"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -90,16 +96,16 @@ export function Hero() {
               UI/UX Design Lead & AI-Powered Frontend Developer
             </motion.h2>
             <motion.p
-              className="text-xl sm:text-2xl text-gray-900 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Crafting seamless, user-focused digital experiences with{" "}
-              <span className="font-bold text-black text-3xl">15+ years</span> of
+              <span className="font-bold text-foreground">15+ years</span> of
               industry expertise. Leading teams and building exceptional web
               applications with{" "}
-              <span className="font-semibold text-purple-600">
+              <span className="font-semibold text-accent">
                 AI-powered development
               </span>{" "}
               workflows.
@@ -114,14 +120,14 @@ export function Hero() {
             >
               <motion.a
                 href="#projects"
-                className="group bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden"
+                className="group bg-accent text-white px-8 py-3 rounded-2xl font-medium hover:bg-accent/90 transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden shadow-button"
                 variants={staggerItem}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10">View My Work</span>
                 <motion.div
-                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
                   initial={{ x: "-150%" }}
                   whileHover={{ x: "150%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -129,14 +135,14 @@ export function Hero() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="group border-2 border-gray-800 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden"
+                className="group border border-gray-300 text-foreground bg-white px-8 py-3 rounded-2xl font-semibold hover:border-accent hover:text-accent transition-all duration-300 inline-flex items-center justify-center transform hover:scale-105 relative overflow-hidden"
                 variants={staggerItem}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10">Get In Touch</span>
                 <motion.div
-                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
+                  className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-gray-50 to-transparent skew-x-12"
                   initial={{ x: "-150%" }}
                   whileHover={{ x: "150%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
